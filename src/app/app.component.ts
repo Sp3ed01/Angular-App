@@ -9,6 +9,7 @@ import { DemoComponent } from './demo/demo.component';
 export class AppComponent {
   title = 'angular-app';
 
+
   @ViewChild('dobinput')
   dateOfBirth!: ElementRef;
   @ViewChild('ageinput')
@@ -32,5 +33,12 @@ export class AppComponent {
 
   logValues() {
     this.inputFields.forEach((input) => console.log(input.nativeElement.value));
+  }
+  ngAfterViewInit() {
+    console.log('AfterViewInit');
+  }
+
+  ngAfterViewChecked() {
+    console.log('AfterViewChecked');
   }
 }
