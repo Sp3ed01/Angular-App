@@ -1,17 +1,18 @@
-import { Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { DemoComponent } from './demo/demo.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
   title = 'angular-app';
-
+  constructor(private cdr: ChangeDetectorRef){}
 
   @ViewChild('dobinput')
-  dateOfBirth!: ElementRef;
+  dateOfBirth!: ElementRef<HTMLInputElement>;
   @ViewChild('ageinput')
   age!: ElementRef;
   @ViewChild(DemoComponent, { static: true })
@@ -36,6 +37,7 @@ export class AppComponent {
   }
   ngAfterViewInit() {
     console.log('AfterViewInit');
+    this.cdr.markForCheck();
   }
 
   ngAfterViewChecked() {
