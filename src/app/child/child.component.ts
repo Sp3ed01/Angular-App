@@ -1,17 +1,10 @@
-import { Component, ContentChild, ContentChildren, QueryList, AfterContentInit, ElementRef } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-child',
-    templateUrl: './child.component.html',
-  
+  templateUrl: './child.component.html',
+  styleUrls: ['./child.component.css']
 })
-export class ChildComponent implements AfterContentInit {
-  @ContentChild('header') header: any;
-  @ContentChildren('item') items!: QueryList<any>;
-  
-
-  ngAfterContentInit() {
-    console.log(this.header);
-    console.log(this.items);
-  }
+export class ChildComponent {
+  @Input() item!: string;
 }
