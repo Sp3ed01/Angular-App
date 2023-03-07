@@ -1,6 +1,12 @@
 <h2 #header2>Parent Component</h2>
 <input type="text" [(ngModel)]="newItem">
 <button (click)="addItem()">Add Item</button>
-<app-child *ngFor="let item of items">
-    <p #contentParagraph>{{item}}</p>
+<app-child>
+    <p #contentParagraph *ngFor="let item of items">{{item}}</p>
+</app-child>
+<app-child>
+    <h1 #header>Craiova</h1>
+</app-child>
+<app-child>
+    <button #btn>start</button>
 </app-child>

@@ -1,4 +1,4 @@
-import { Component, ContentChild, ContentChildren, ElementRef, Input } from '@angular/core';
+import { Component, ContentChild, ContentChildren, ElementRef, Input, QueryList } from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -7,14 +7,16 @@ import { Component, ContentChild, ContentChildren, ElementRef, Input } from '@an
 })
 export class ChildComponent {
   @Input() item!: string;
-  @ContentChildren('contentParagraph') contentParagraph!: ElementRef ;
+  @ContentChildren('contentParagraph') contentParagraph?: QueryList<HTMLParagraphElement>;
+  @ContentChild('header') header?: ElementRef<HTMLHeadingElement>;
+  @ContentChild('btn') btn?: ElementRef<HTMLButtonElement>;
 
 
   ngAfterViewInit() {
     console.log('ChildComponent');
   }
 
-  ngAfterContentInit(){
+  ngAfterContentInit() {
     console.log('ContentChild');
   }
 
