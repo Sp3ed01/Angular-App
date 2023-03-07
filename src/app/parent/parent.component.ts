@@ -23,6 +23,7 @@ export class ParentComponent {
     console.log('ParentComponent');
   }
 
+
   addItem() {
     this.items.push(this.newItem);
     this.newItem = '';
