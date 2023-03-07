@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, ContentChild, Input } from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -7,4 +7,13 @@ import { Component, Input } from '@angular/core';
 })
 export class ChildComponent {
   @Input() item!: string;
+
+  ngAfterViewInit() {
+    console.log('ChildComponent');
+  }
+
+  ngAfterViewChecked() {
+    console.log('ChildComponent');
+  }
+
 }
