@@ -10,6 +10,11 @@ export class ChildComponent {
   @ContentChildren('contentParagraph') contentParagraph?: QueryList<HTMLParagraphElement>;
   @ContentChild('header') header?: ElementRef<HTMLHeadingElement>;
   @ContentChild('btn') btn?: ElementRef<HTMLButtonElement>;
+  @Input() number: number | undefined;
+
+  displayNumber(num: number) {
+    this.number = num;
+  }
 
 
   ngAfterViewInit() {

@@ -10,6 +10,13 @@ import { ChildComponent } from '../child/child.component';
 export class ParentComponent {
   @ViewChild(ChildComponent) child!: ChildComponent;
   @ViewChildren(ChildComponent) children!: QueryList<ChildComponent>;
+  childNumber?: number;
+
+  generateRandomNumber() {
+    const randomNumber = Math.floor(Math.random() * 1000);
+    this.child.displayNumber(randomNumber);
+    this.childNumber = randomNumber;
+  }
 
   items = ['Item 1', 'Item 2', 'Item 3'];
   newItem = '';
