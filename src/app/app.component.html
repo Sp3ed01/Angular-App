@@ -1,1 +1,27 @@
-<app-parent></app-parent>
+<nav>
+    <a class="button"
+       routerLink="/crisis-list"
+       routerLinkActive="activebutton"
+       ariaCurrentWhenActive="page">
+      Crisis Center
+    </a> |
+    <a class="button"
+       routerLink="/heroes-list"
+       routerLinkActive="activebutton"
+       ariaCurrentWhenActive="page">
+      Heroes
+    </a> |
+    <a class="button"
+       routerLink="/child"
+       routerLinkActive="activebutton"
+       ariaCurrentWhenActive="page">
+      Child
+    </a> |
+    <a class="button"
+       routerLink="/parent"
+       routerLinkActive="activebutton"
+       ariaCurrentWhenActive="page">
+      Parent
+    </a>
+  </nav>
+<router-outlet></router-outlet>

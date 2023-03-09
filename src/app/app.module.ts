@@ -5,6 +5,11 @@ import { AppComponent } from './app.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { HeroesListComponent } from './heroes-list/heroes-list.component';
+import { CrisisListComponent } from './crisis-list/crisis-list.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
 
 
 
@@ -14,12 +19,23 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     ParentComponent,
     ChildComponent,
+    PageNotFoundComponent,
 
 
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot([
+      {path: 'crisis-list', component: CrisisListComponent},
+      {path: 'child', component: ChildComponent},
+      {path: 'parent', component: ParentComponent},
+      {path: '', redirectTo: '/heroes-list', pathMatch: 'full'},
+      {path: 'heroes-list', component: HeroesListComponent},
+      {path: '**', component: PageNotFoundComponent},
+
+    ]),
+
   ],
   providers: [],
   bootstrap: [AppComponent]
