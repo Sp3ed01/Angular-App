@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 import { HeroesListComponent } from './heroes-list/heroes-list.component';
 import { CrisisListComponent } from './crisis-list/crisis-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AuthGuardService } from './auth-guard.service';
 
 
 
@@ -29,7 +30,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     RouterModule.forRoot([
       {path: 'crisis-list', component: CrisisListComponent},
       {path: 'child', component: ChildComponent},
-      {path: 'parent', component: ParentComponent},
+      {path: 'parent', component: ParentComponent, canActivate:[AuthGuardService]},
       {path: '', redirectTo: '/heroes-list', pathMatch: 'full'},
       {path: 'heroes-list', component: HeroesListComponent},
       {path: '**', component: PageNotFoundComponent},
@@ -37,7 +38,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ]),
 
   ],
-  providers: [],
+  providers: [AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
