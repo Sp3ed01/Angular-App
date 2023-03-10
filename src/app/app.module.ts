@@ -12,6 +12,7 @@ import { CrisisListComponent } from './crisis-list/crisis-list.component';
 import { HeroesListComponent } from './heroes-list/heroes-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ParentComponent } from './parent/parent.component';
+import { StartComponent } from './start/start.component';
 
 const appRoute: Routes = [
   { path: 'crisis-list', component: CrisisListComponent },
@@ -19,10 +20,12 @@ const appRoute: Routes = [
   { path: 'parent', component: ParentComponent}, //canActivate: [AuthGuardService] },
   { path: '', redirectTo: '/heroes-list', pathMatch: 'full' },
   { path: 'heroes-list', component: HeroesListComponent },
+  { path: 'start', component: StartComponent },
   { path: 'info', component: AboutUsComponent },
   {
     path: "parent", canActivateChild: [AuthGuardService], children: [
-      { path: "info", component: AboutUsComponent }
+      { path: "info", component: AboutUsComponent },
+      { path: "start", component: StartComponent }
     ]
   },
   { path: '**', component: PageNotFoundComponent },
@@ -35,6 +38,7 @@ const appRoute: Routes = [
     ChildComponent,
     PageNotFoundComponent,
     AboutUsComponent,
+    StartComponent,
   ],
   imports: [
     BrowserModule,

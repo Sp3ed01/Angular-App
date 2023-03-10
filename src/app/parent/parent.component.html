@@ -7,10 +7,11 @@
 <app-child>
     <h1 #header>Craiova</h1>
 </app-child>
-<app-child>
-    <button #btn>start</button>
-</app-child>
 <div>
     <button (click)="generateRandomNumber()">Generate Random Number</button>
 </div>
-<button routerLink="info">Info</button>
+<br>
+
+<button class="button" routerLink="start">start</button> |
+<button class="button" routerLink="info">Info</button>
+<router-outlet></router-outlet>
