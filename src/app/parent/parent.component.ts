@@ -22,13 +22,13 @@ export class ParentComponent {
   newItem = '';
 
 
-  ngAfterViewInit() {
-    console.log('ParentComponent');
-  }
+  // ngAfterViewInit() {
+  //   console.log('ParentComponent');
+  // }
 
-  ngAfterViewChecked() {
-    console.log('ParentComponent');
-  }
+  // ngAfterViewChecked() {
+  //   console.log('ParentComponent');
+  // }
 
 
   addItem() {

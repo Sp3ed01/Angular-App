@@ -17,17 +17,17 @@ export class ChildComponent {
   }
 
 
-  ngAfterViewInit() {
-    console.log('ChildComponent');
-  }
+  // ngAfterViewInit() {
+  //   console.log('ChildComponent');
+  // }
 
-  ngAfterContentInit() {
-    console.log('ContentChild');
-  }
+  // ngAfterContentInit() {
+  //   console.log('ContentChild');
+  // }
 
 
-  ngAfterViewChecked() {
-    console.log('ChildComponent');
-  }
+  // ngAfterViewChecked() {
+  //   console.log('ChildComponent');
+  // }
 
 }
