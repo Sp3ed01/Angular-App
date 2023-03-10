@@ -1,0 +1,25 @@
+.btn{
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 25px;
+    border: 2px solid var(--color);
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    color: rgb(15, 15, 15);
+    margin-right: 30px;
+}
+.btn::after{
+    content: "";
+    background: var(--color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    z-index:-1;
+    transition: width .5s ease;
+}
+.btn:hover::after{
+    width: 100%;
+}

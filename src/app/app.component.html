@@ -22,6 +22,12 @@
        routerLinkActive="activebutton"
        ariaCurrentWhenActive="page">
       Parent
+    </a> 
+    <a class="button" style="float:right">
+      <li (click)="login()">LogIn</li>
+    </a>
+    <a class="button" style="float:right">
+      <li (click)="logout()">LogOut</li>
     </a>
   </nav>
 <router-outlet></router-outlet>
