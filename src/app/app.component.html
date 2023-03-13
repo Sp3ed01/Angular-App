@@ -1,45 +1,31 @@
 <nav>
-    <a class="button"
-       routerLink="/crisis-list"
-       routerLinkActive="activebutton"
-       ariaCurrentWhenActive="page">
-      Crisis Center
-    </a> |
-    <a class="button"
-       routerLink="/heroes-list"
-       routerLinkActive="activebutton"
-       ariaCurrentWhenActive="page">
-      Heroes
-    </a> |
-    <a class="button"
-       routerLink="/child"
-       routerLinkActive="activebutton"
-       ariaCurrentWhenActive="page">
-      Child
-    </a> |
-    <a class="button"
-       routerLink="/parent"
-       routerLinkActive="activebutton"
-       ariaCurrentWhenActive="page">
-      Parent
-    </a> 
-    <!-- <a class="button"
+  <a class="button" routerLink="/crisis-list" routerLinkActive="activebutton" ariaCurrentWhenActive="page">
+    Crisis Center
+  </a> |
+  <a class="button" routerLink="/heroes-list" routerLinkActive="activebutton" ariaCurrentWhenActive="page">
+    Heroes
+  </a> |
+  <a class="button" routerLink="/child" routerLinkActive="activebutton" ariaCurrentWhenActive="page">
+    Child
+  </a> |
+  <a class="button" routerLink="/parent" routerLinkActive="activebutton" ariaCurrentWhenActive="page">
+    Parent
+  </a>
+  <!-- <a class="button"
        routerLink="/start"
        routerLinkActive="activebutton"
        ariaCurrentWhenActive="page">
       Start
     </a>  --> |
-  <a class="button"
-     routerLink="/preferences"
-     routerLinkActive="activebutton"
-     ariaCurrentWhenActive="page">
+  <a class="button" routerLink="/preferences" routerLinkActive="activebutton" ariaCurrentWhenActive="page">
     Preferences
-  </a> 
-    <a class="button" style="float:right">
-      <li (click)="login()">LogIn</li>
-    </a>
-    <a class="button" style="float:right">
-      <li (click)="logout()">LogOut</li>
-    </a>
-  </nav>
+  </a>
+  <a class="button" style="float:right">
+    <li (click)="login()">LogIn</li>
+  </a>
+  <a class="button" style="float:right">
+    <li (click)="logout()">LogOut</li>
+  </a>
+</nav>
 <router-outlet></router-outlet>
+<router-outlet name="about"></router-outlet>

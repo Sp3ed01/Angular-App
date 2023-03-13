@@ -27,9 +27,9 @@ const appRoute: Routes = [
     }
   }, //canActivate: [AuthGuardService] },
   { path: '', redirectTo: '/heroes-list', pathMatch: 'full' },
-  { path: 'heroes-list', component: HeroesListComponent },
+  { path: 'heroes-list', component: HeroesListComponent, outlet:'about' },
   { path: 'start', component: StartComponent },
-  { path: 'info', component: AboutUsComponent},
+  { path: 'info', component: AboutUsComponent },
   {
     path: "parent", canActivateChild: [AuthGuardService], children: [
       { path: "info", component: AboutUsComponent },
