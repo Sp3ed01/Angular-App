@@ -12,10 +12,10 @@ import { ChildComponent } from './child/child.component';
 import { CrisisListComponent } from './crisis-list/crisis-list.component';
 import { FormGuardGuard } from './form-guard.guard';
 import { HeroesListComponent } from './heroes-list/heroes-list.component';
+import { ItemsResolverService } from './items-resolver-service.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ParentComponent } from './parent/parent.component';
 import { StartComponent } from './start/start.component';
-import { ItemsResolverService } from './items-resolver-service.service';
 
 
 const appRoute: Routes = [
@@ -26,7 +26,7 @@ const appRoute: Routes = [
       items: ItemsResolverService
     }
   }, //canActivate: [AuthGuardService] },
-  { path: '', redirectTo: '/parent', pathMatch: 'full' },
+  { path: '', redirectTo: '/heroes-list', pathMatch: 'full' },
   { path: 'heroes-list', component: HeroesListComponent },
   { path: 'start', component: StartComponent },
   { path: 'info', component: AboutUsComponent},
